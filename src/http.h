@@ -66,23 +66,6 @@ HTTP_API void* mapGet(Map m, char* name);
 // On error Map's Error is set
 HTTP_API void* mapRemove(Map m, char* name);
 
-// ioError returns the latest IO Error
-// use onError(ioError(req)) to test for IO errors
-HTTP_API Error* ioError(IO io);
-
-// ioRead reads contents from io to the given buffer buf (at most size bytes) and
-// returns the number of bytes read OR -1 and IO's Error is set
-HTTP_API int ioRead(IO io, char* buf, int size);
-
-// ioWrite writes contents from the buf buffer to IO and
-// returns the number of bytes written OR -1 and IO's Error is set
-HTTP_API int ioWrite(IO io, char* buf, int size);
-
-// ioClose closes the IO
-// On success it should return 0 and io no longer points to valid data, SO DON'T USE IT AGAIN!
-// On failure it returns a non zero value and Conn's Error is set
-HTTP_API int ioClose(IO io);
-
 // respError returns the latest Request Error
 // use onError(reqError(req)) to test for Request errors
 HTTP_API Error* reqError(Req req);
