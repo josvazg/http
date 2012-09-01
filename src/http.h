@@ -11,8 +11,6 @@
   #define HTTP_API
 #endif
 
-typedef struct IO_S * IO;
-
 typedef struct Req_S * Req;
 
 typedef struct Resp_S * Resp;
